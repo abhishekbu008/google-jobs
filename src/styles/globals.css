@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .center-div {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex;
+  }
+
+  .heading {
+    @apply text-grey-light uppercase font-bold font-poppins mb-4;
+  }
+
+  .btn-typography {
+    @apply flex items-center justify-center px-2 py-1.5 border border-blue-light rounded font-bold text-xs h-fit;
+  }
+
+  .link-text {
+    @apply text-blue-medium font-poppins text-sm font-medium cursor-pointer;
+  }
+}
