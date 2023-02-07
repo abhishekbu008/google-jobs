@@ -32,7 +32,7 @@ export const removeSpecialChars = (str) => str.replace(/[^\w\s]/gi, "");
 export const getFulltimeResults = (results, isFulltime) => {
   let filteredResults = results;
   if (isFulltime) {
-    filteredResults = results.filter(
+    filteredResults = (results ?? []).filter(
       (result) => result.schedule_type === FULL_TIME_KEY
     );
   }

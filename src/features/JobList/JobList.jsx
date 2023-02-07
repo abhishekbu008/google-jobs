@@ -30,7 +30,7 @@ function JobList({ className = "", style = {} }) {
     loading,
   } = useContext(QueryContext);
 
-  const filteredResults = getFulltimeResults(results, isFulltime);
+  const filteredResults = getFulltimeResults(results, isFulltime) || [];
 
   useEffect(() => {
     setLoading(true);
@@ -77,6 +77,9 @@ function JobList({ className = "", style = {} }) {
             onClick={handleClick}
           />
         ))}
+      {!loading && filteredResults.length === 0 && (
+        <p>Server Down! please try again later</p>
+      )}
       {!loading && (
         <Pagination
           totalCount={filteredResults.length}

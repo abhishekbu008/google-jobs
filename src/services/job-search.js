@@ -20,7 +20,7 @@ export const searchJobs = async (query, location, page = 0) => {
     })
   );
 
-  if (!response) {
+  if (!response || response.data.error) {
     return [null, err];
   }
 
